@@ -1,0 +1,23 @@
+### Transferência válida
+POST http://localhost:8080/payments/transfer
+Content-Type: application/json
+
+{
+  "senderId": "1",
+  "receiverId": "2",
+  "amount": 100,
+  "description": "teste"
+}
+
+###
+
+### Transferência com erro (saldo insuficiente)
+POST http://localhost:8080/payments/transfer
+Content-Type: application/json
+
+{
+  "senderId": "1",
+  "receiverId": "2",
+  "amount": 999999,
+  "description": "erro"
+}
