@@ -1,4 +1,4 @@
-package com.example.demo.usecase;
+package com.example.demo.application.usecase;
 
 import com.example.demo.domain.model.User;
 import com.example.demo.domain.port.UserRepository;

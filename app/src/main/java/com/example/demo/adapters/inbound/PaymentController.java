@@ -2,8 +2,8 @@ package com.example.demo.adapters.inbound;
 
 import com.example.demo.adapters.inbound.dto.TransferRequest;
 import com.example.demo.adapters.inbound.dto.TransferResponse;
-import com.example.demo.usecase.TransferMoneyUseCase;
-import com.example.demo.usecase.TransferResult;
+import com.example.demo.application.usecase.TransferMoneyUseCase;
+import com.example.demo.application.usecase.TransferResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

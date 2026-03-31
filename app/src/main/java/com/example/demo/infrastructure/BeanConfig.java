@@ -1,7 +1,7 @@
 package com.example.demo.infrastructure;
 
 import com.example.demo.adapters.outbound.InMemoryUserRepository;
-import com.example.demo.usecase.TransferMoneyUseCase;
+import com.example.demo.application.usecase.TransferMoneyUseCase;
 import com.example.demo.domain.port.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
