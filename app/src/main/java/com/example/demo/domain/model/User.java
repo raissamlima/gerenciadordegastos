@@ -30,6 +30,10 @@ public class User {
         this.balance = balance;
     }
 
+    public String getId(){
+        return this.id;
+    }
+
     /**
      * Regra de negócio: debitar saldo
      */
