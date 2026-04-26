@@ -22,7 +22,7 @@ public class TransactionController {
     public ResponseEntity<List<TransactionsResponseDTO>> transactions(){
         List<TransactionsResponseDTO> transactions = this.repository.listAll()
                 .stream()
-                .map(TransactionsResponseDTO::new)
+                .map(TransactionsResponseDTO::from)
                 .toList();
 
         return ResponseEntity.ok(transactions);
