@@ -1,6 +1,8 @@
 package com.example.demo.application.usecase;
 
+import com.example.demo.domain.model.Transaction;
 import com.example.demo.domain.model.User;
+import com.example.demo.domain.port.TransactionRepository;
 import com.example.demo.domain.port.UserRepository;
 
 import java.math.BigDecimal;
@@ -14,12 +16,14 @@ import java.util.UUID;
 public class TransferMoneyUseCase {
 
     private final UserRepository userRepository;
+    private final TransactionRepository transactionRepository;
 
     /**
      * Injeção de dependência via construtor
      */
-    public TransferMoneyUseCase(UserRepository userRepository) {
+    public TransferMoneyUseCase(UserRepository userRepository, TransactionRepository transactionRepository) {
         this.userRepository = userRepository;
+        this.transactionRepository = transactionRepository;
     }
 
     /**
@@ -39,18 +43,25 @@ public class TransferMoneyUseCase {
         userRepository.save(from);
         userRepository.save(to);
 
-        // 4. Gerar ID da transação (simulando Pix real)
-        String transactionId = UUID.randomUUID().toString();
+        // 4. Registrar transação (simulando Pix real)
+        Transaction newTransaction = new Transaction(
+                UUID.randomUUID().toString(),
+                fromId,
+                toId,
+                amount,
+                LocalDateTime.now());
+
+        transactionRepository.save(newTransaction);
 
         return new TransferResult(
-                UUID.randomUUID().toString(),
+                newTransaction.getUuid(),
                 "SUCCESS",
-                amount,
+                newTransaction.getAmount(),
                 from.getName(),
                 from.getCpf(),
                 to.getName(),
                 to.getCpf(),
-                LocalDateTime.now()
+                newTransaction.getCreatedAt()
         );
     }
 }
