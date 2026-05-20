@@ -1,4 +1,4 @@
-package com.example.demo.adapters.inbound;
+package com.example.demo.adapters.inbound.controllers;
 
 import com.example.demo.adapters.inbound.dto.TransferRequest;
 import com.example.demo.adapters.inbound.dto.TransferResponse;
@@ -28,7 +28,6 @@ public class PaymentController {
      */
     @PostMapping("/transfer")
     public TransferResponse transfer(@RequestBody TransferRequest request) {
-
         // chama o caso de uso
         TransferResult result = useCase.execute(
                 request.getSenderId(),

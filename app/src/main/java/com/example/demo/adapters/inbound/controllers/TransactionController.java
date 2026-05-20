@@ -1,4 +1,4 @@
-package com.example.demo.adapters.inbound;
+package com.example.demo.adapters.inbound.controllers;
 
 import com.example.demo.adapters.inbound.dto.TransactionsResponseDTO;
 import com.example.demo.domain.port.TransactionRepository;
