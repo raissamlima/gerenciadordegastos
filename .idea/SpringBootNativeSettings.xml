@@ -3,6 +3,10 @@
   <component name="SpringBootNativeSettings">
     <option name="linkedExternalProjectsSettings">
       <NativeProjectSettings>
+        <option name="externalProjectPath" value="-DebugSession-" />
+        <option name="runConfigurationId" value="DemoApplication" />
+      </NativeProjectSettings>
+      <NativeProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/app/src/main/java/com/example/demo/DemoApplication.java" />
         <option name="qualifiedMainClassName" value="com.example.demo.DemoApplication" />
         <option name="runConfigurationName" value="DemoApplication" />

@@ -1,5 +1,7 @@
 package com.example.demo.adapters.outbound.mappers;
 
+import com.example.demo.adapters.inbound.dto.UserRequestDTO;
+import com.example.demo.adapters.inbound.dto.UserResponseDTO;
 import com.example.demo.adapters.outbound.entities.UserEntity;
 import com.example.demo.domain.model.User;
 
@@ -13,9 +15,28 @@ public class UserMapper {
                 userEntity.getBalance()
         );
     }
+    public static User toDomain(String UUID,UserRequestDTO userRequestDTO){
+        return new User(
+                UUID,
+                userRequestDTO.getName(),
+                userRequestDTO.getCpf(),
+                userRequestDTO.getAddress(),
+                userRequestDTO.getBalance()
+        );
+    }
 
     public static UserEntity toEntity(User user){
         return new UserEntity(
+                user.getId(),
+                user.getName(),
+                user.getCpf(),
+                user.getAddress(),
+                user.getBalance()
+        );
+    }
+
+    public static UserResponseDTO toResponseDTO(User user){
+        return new UserResponseDTO(
                 user.getId(),
                 user.getName(),
                 user.getCpf(),

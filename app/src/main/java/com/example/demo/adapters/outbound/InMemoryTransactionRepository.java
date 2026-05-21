@@ -16,12 +16,12 @@ public class InMemoryTransactionRepository implements TransactionRepository {
         return db.values().stream().toList();
     }
 
-    @Override
-    public List<Transaction> filter(Predicate<Transaction> filters){
-        List<Transaction> all = this.listAll();
-
-        return all.stream().filter(filters).toList();
-    }
+//    @Override
+//    public List<Transaction> filter(Predicate<Transaction> filters){
+//        List<Transaction> all = this.listAll();
+//
+//        return all.stream().filter(filters).toList();
+//    }
 
     @Override
     public void save(Transaction transaction){
