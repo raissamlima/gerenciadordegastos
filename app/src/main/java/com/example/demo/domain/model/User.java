@@ -1,5 +1,6 @@
 package com.example.demo.domain.model;
 
+import com.example.demo.domain.exception.InsufficientBalanceException;
 import lombok.Getter;
 
 import java.math.BigDecimal;
@@ -36,7 +37,7 @@ public class User {
     public void debit(BigDecimal amount) {
         // compareTo < 0 significa que o saldo é menor que o valor
         if (balance.compareTo(amount) < 0) {
-            throw new RuntimeException("Saldo insuficiente");
+            throw new InsufficientBalanceException("Saldo insuficiente");
         }
 
         // subtrai o valor do saldo
