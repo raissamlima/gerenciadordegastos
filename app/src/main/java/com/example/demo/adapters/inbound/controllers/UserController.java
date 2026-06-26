@@ -3,6 +3,7 @@ package com.example.demo.adapters.inbound.controllers;
 import com.example.demo.adapters.inbound.dto.UserRequestDTO;
 import com.example.demo.adapters.inbound.dto.UserResponseDTO;
 import com.example.demo.application.usecase.CreateUserUseCase;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ public class UserController {
     }
 
     @PostMapping
-    public UserResponseDTO create(@RequestBody UserRequestDTO request){
+    public UserResponseDTO create(@Valid @RequestBody UserRequestDTO request){
         return this.createUseCase.execute(request);
     }
 
