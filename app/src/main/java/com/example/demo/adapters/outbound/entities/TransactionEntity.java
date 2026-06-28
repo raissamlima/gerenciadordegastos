@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -31,7 +30,6 @@ public class TransactionEntity {
     @Column(nullable = false)
     private BigDecimal amount;
 
-    @CreatedDate // Acho que isso não está tendo efeito
     @Column(nullable = false)
     private LocalDateTime createdAt;
 }
