@@ -4,6 +4,7 @@ import com.example.demo.domain.model.Transaction;
 import com.example.demo.domain.model.User;
 import com.example.demo.domain.port.TransactionRepository;
 import com.example.demo.domain.port.UserRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,6 +14,7 @@ import java.util.UUID;
  * Caso de uso da aplicação
  * Representa a ação de transferir dinheiro entre usuários
  */
+@Transactional
 public class TransferMoneyUseCase {
 
     private final UserRepository userRepository;

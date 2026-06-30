@@ -1,9 +1,10 @@
-package com.example.demo.adapters.inbound;
+package com.example.demo.adapters.inbound.controllers;
 
 import com.example.demo.adapters.inbound.dto.TransferRequest;
 import com.example.demo.adapters.inbound.dto.TransferResponse;
 import com.example.demo.application.usecase.TransferMoneyUseCase;
 import com.example.demo.application.usecase.TransferResult;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +28,7 @@ public class PaymentController {
      * Endpoint para transferência (tipo Pix)
      */
     @PostMapping("/transfer")
-    public TransferResponse transfer(@RequestBody TransferRequest request) {
-
+    public TransferResponse transfer(@Valid @RequestBody TransferRequest request) {
         // chama o caso de uso
         TransferResult result = useCase.execute(
                 request.getSenderId(),

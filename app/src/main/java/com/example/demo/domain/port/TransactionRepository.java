@@ -7,6 +7,6 @@ import java.util.function.Predicate;
 
 public interface TransactionRepository {
     List<Transaction> listAll();
-    List<Transaction> filter(Predicate<Transaction> filters);
+//    List<Transaction> filter(Predicate<Transaction> filters);
     void save(Transaction transaction);
 }
